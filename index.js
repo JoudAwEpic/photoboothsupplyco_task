@@ -6,9 +6,12 @@ const dotenv = require("dotenv");
 // init the application
 const app = express();
 
-// shape the data coming from requests
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// import system routes
+const { quoteRoute } = require("./routes");
+
+// shape the data coming from requests (can be used to extend functionality of the app to let the user generate his own text with the image)
+//app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
 
 // Define headers in the request
 app.use((req, res, next) => {
@@ -26,6 +29,9 @@ app.use((req, res, next) => {
 
 // configure using of the env variables
 dotenv.config();
+
+// define the apis
+app.use(`/`, quoteRoute);
 
 // listen to port and start the application
 const port = process.env.PORT || 3000;

@@ -31,7 +31,7 @@ const getQuoteAndGenerateImage = async (_req, res) => {
   let catAsServiceResponse;
   try {
     catAsServiceResponse = await catAsServices.get(
-      `/${programmingQuotesResponse.data.en}`
+      `/${encodeURI(programmingQuotesResponse.data.en)}`
     );
   } catch (error) {
     // log the error

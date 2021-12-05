@@ -1,0 +1,23 @@
+{
+  "name": "photobooth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node ./index.js",
+    "dev": "NODE_ENV=production nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "Joud W. Awad",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
